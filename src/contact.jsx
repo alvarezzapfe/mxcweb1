@@ -23,10 +23,9 @@ const Contact = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await axios.post(
-        "http://localhost:5002/send-email",
+        `${import.meta.env.VITE_BACKEND_URL}/send-email`,
         formData
       );
       alert("¡Solicitud enviada correctamente!");
