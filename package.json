@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.7.2",
+    "@mikekorakakis/react-3d-animated-card": "^1.0.12",
     "@sendgrid/mail": "^8.1.4",
     "aos": "^2.3.4",
     "axios": "^1.7.9",
@@ -21,8 +22,10 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
+    "framer-motion": "^11.18.0",
     "nodemailer": "^6.9.16",
     "react": "^18.3.1",
+    "react-animated-3d-card": "^1.0.2",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.1",
     "recharts": "^2.15.0"

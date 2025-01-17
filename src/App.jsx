@@ -10,6 +10,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import chapu from "./assets/images/chapu.png";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./login";
+import { motion } from "framer-motion";
 
 import Contact from "./contact";
 import team1 from "./assets/images/team1.png";
@@ -24,71 +25,6 @@ import totalplay from "./assets/images/totalplay.png";
 import elektra from "./assets/images/elektra.png";
 import fortem from "./assets/images/fortem.png";
 import dila from "./assets/images/dila.png";
-
-const achievements = [
-  { title: "Proyectos Financiados", value: "+50", icon: "fas fa-chart-line" },
-  {
-    title: "Capital Desplegado",
-    value: "$20,000 Millones MXN",
-    icon: "fas fa-dollar-sign",
-  },
-  { title: "Años en el Mercado", value: "+30", icon: "fas fa-calendar-alt" },
-  { title: "Clientes Satisfechos", value: "+25", icon: "fas fa-smile" },
-  { title: "Regiones Atendidas", value: "5+", icon: "fas fa-globe" },
-];
-
-const transactions = [
-  {
-    img: "./assets/images/mac.png",
-    title: "Línea de Crédito con Banca de Desarrollo",
-    description: "Para Hospitales Mac México.",
-  },
-  {
-    img: "./assets/images/transaction2.jpg",
-    title: "Expansión Industrial",
-    description: "Capital para una planta de manufactura en Monterrey.",
-  },
-  {
-    img: "./assets/images/transaction3.jpg",
-    title: "Construcción Residencial",
-    description: "Inversión en desarrollos habitacionales sostenibles.",
-  },
-  {
-    img: "./assets/images/transaction4.jpg",
-    title: "Logística y Transporte",
-    description: "Financiamiento para flotas de transporte comercial.",
-  },
-  {
-    img: "./assets/images/transaction5.jpg",
-    title: "Educación Superior",
-    description: "Capital para expansión de universidades privadas.",
-  },
-  {
-    img: "./assets/images/transaction6.jpg",
-    title: "Innovación Tecnológica",
-    description: "Apoyo a startups de tecnología avanzada.",
-  },
-  {
-    img: "./assets/images/transaction7.jpg",
-    title: "Hospitales Privados",
-    description: "Inversión en infraestructura hospitalaria.",
-  },
-  {
-    img: "./assets/images/transaction8.jpg",
-    title: "Comercio Minorista",
-    description: "Capital para cadenas de supermercados.",
-  },
-  {
-    img: "./assets/images/transaction9.jpg",
-    title: "Turismo y Hotelería",
-    description: "Financiamiento para resorts turísticos.",
-  },
-  {
-    img: "./assets/images/transaction10.jpg",
-    title: "Infraestructura Pública",
-    description: "Apoyo a proyectos de infraestructura vial.",
-  },
-];
 
 // Importar la imagen
 import logoMxcBlanco from "./assets/images/logomxc-blanco.png";
@@ -141,16 +77,18 @@ const Home = () => {
                   Equipo
                 </a>
               </li>
-              <li className="nav-item">
-                <a href="#features" className="nav-link">
-                  Oferta
-                </a>
-              </li>
+
               <li className="nav-item">
                 <a href="#track" className="nav-link">
                   Track Record
                 </a>
               </li>
+              <li className="nav-item">
+                <a href="#columns" className="nav-link">
+                  Productos
+                </a>
+              </li>
+
               <li className="nav-item">
                 <a href="/contact" className="nav-link">
                   Contacto
@@ -186,14 +124,21 @@ const Home = () => {
           <h2 className="mb-4" data-aos="fade-up">
             Acerca de Nosotros
           </h2>
-          <p className="text-muted" data-aos="fade-up">
-            MXC Capital es una Banca de Inversión Independiente con amplía
-            experiencia en levantamiento de capital con AFORES, transacciones
-            públicas y privadas, emisiones de deuda en el mercado mexicano y
-            levantamiento de capital privado. En MXC Capital, transformamos el
-            acceso al capital mediante estrategias innovadoras y un equipo
-            comprometido con el éxito de nuestros clientes.
-          </p>
+          <div className="text-muted" data-aos="fade-up">
+            <p>
+              MXC Capital es una Banca de Inversión Independiente con amplia
+              experiencia en levantamiento de capital los Inversionistas
+              Institucionales de México, transacciones públicas y privadas,
+              emisiones de deuda en el mercado local y levantamiento de capital
+              privado.
+            </p>
+            <p>
+              En MXC Capital, transformamos el acceso al capital mediante
+              estrategias innovadoras y un equipo comprometido con el éxito de
+              nuestros clientes.
+            </p>
+          </div>
+
           <img
             src={logoMxcBlanco}
             alt="Logotipo de MXC Capital"
@@ -276,25 +221,27 @@ const Home = () => {
         </div>
 
         <div className="container mt-5">
-          <h2 data-aos="fade-up">Un equipo experimentado en:</h2>
+          <h4 data-aos="fade-up">Un equipo experimentado en:</h4>
+          <p> </p>
           <div className="row">
             {[
               {
                 icon: "fas fa-lightbulb",
                 title: "Originación",
                 description:
-                  "Proyectos top con impacto estratégico y sostenible.",
+                  "Desde Empresas que buscan listarse (BMV) hasta líneas de crédito estructuradas.",
               },
               {
                 icon: "fas fa-cogs",
-                title: "Estructura",
+                title: "Estructuración",
                 description:
-                  "Definimos y optimizamos estructuras transparentes.",
+                  "Experiencia probada en transacciones relevantes. Ayudamos a definir el vehículo ideal y ejecutando.",
               },
               {
                 icon: "fas fa-check-circle",
-                title: "Ejecución",
-                description: "No hacemos fumble. Nuestra reputación habla.",
+                title: "Levantamiento",
+                description:
+                  "Tenemos experiencia probada levantando Capital, desde fondos privados, hasta +15 IPOs.",
               },
             ].map((feature, index) => (
               <div
@@ -325,45 +272,45 @@ const Home = () => {
             {[
               {
                 img: contigo,
-                financingType: "Deuda Privada",
-                amount: "$500 Millones MXN",
-                year: "2023",
-                role: "Asesor y Estructurador",
+                financingType: "Emisión de Deuda Pública",
+                amount: "$600 Millones MXN",
+                year: "2020",
+                role: "Asesor, Agente Estructurador & Colocador",
               },
               {
                 img: elektra,
-                financingType: "Deuda Pública",
-                amount: "$1,200 Millones MXN",
+                financingType: "Emisión de Deuda Pública",
+                amount: "$7,200 Millones MXN",
                 year: "2022",
-                role: "Asesor y Estructurador",
+                role: "Asesor, Agente Estructurador & Colocador",
               },
               {
                 img: dila,
                 financingType: "Capital Privado",
-                amount: "$800 Millones MXN",
-                year: "2021",
-                role: "Asesor y Estructurador",
+                amount: "$1,500 Millones MXN",
+                year: "2022",
+                role: "Asesor, Agente Estructurador & Colocador",
               },
               {
                 img: totalplay,
                 financingType: "Deuda Pública",
-                amount: "$300 Millones MXN",
-                year: "2020",
-                role: "Asesor y Estructurador",
+                amount: "$1,300 Millones MXN",
+                year: "2023",
+                role: "Asesor, Agente Estructurador & Agente Colocador",
               },
               {
                 img: fortem,
-                financingType: "Otra",
+                financingType: "Estructura Deuda Privada",
                 amount: "$700 Millones MXN",
                 year: "2023",
-                role: "Asesor y Estructurador",
+                role: "Asesor, Agente Estructurador & Colocador",
               },
               {
                 img: mac,
-                financingType: "Otra",
-                amount: "$700 Millones MXN",
-                year: "2023",
-                role: "Asesor y Estructurador",
+                financingType: "Línea de Crédito",
+                amount: "$5,000 Millones MXN",
+                year: "2024",
+                role: "Asesor, Agente Estructurador & Colocador",
               },
             ].map((transaction, index) => (
               <div
@@ -406,12 +353,12 @@ const Home = () => {
               {
                 quote:
                   "MXC Capital me ayudó a llevar mi empresa al siguiente nivel.",
-                name: "Juan Pérez",
+                name: "Miguel Sánchez Navarro - Fortem Capital",
               },
               {
                 quote:
                   "La atención al cliente y los resultados fueron excepcionales.",
-                name: "María Gómez",
+                name: "Esteban Galindez - Elektra",
               },
             ].map((testimonial, index) => (
               <div
@@ -437,6 +384,9 @@ const Home = () => {
       <section id="columns" className="py-5 text-center" data-aos="fade-up">
         <div className="container expanded-section">
           <h2 className="mb-5">Explora Más</h2>
+          <h3 className="mb-5">
+            Conoce los productos en los que MXC se especializa
+          </h3>
           <div className="row justify-content-center">
             {[
               {
@@ -461,7 +411,7 @@ const Home = () => {
                 title: "IPOs a través de BMV",
                 icon: "fas fa-cogs",
                 details:
-                  "Facilitamos el acceso al mercado público a través de IPOs diseñadas estratégicamente.",
+                  "Facilitamos el acceso al mercado público a través de IPOs diseñadas estratégicamente con Inversionistas Institucionales.",
               },
               {
                 title: "Deuda Quirografaría",
@@ -489,6 +439,8 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Sección Oferta de Valor */}
+
       {/* Footer */}
       <footer className="footer-section text-white">
         <div className="container">
@@ -510,6 +462,12 @@ const Home = () => {
               <h5>Contacto</h5>
               <p>Tel: +52 123 456 7890</p>
               <p>Email: contacto@mxccapital.com.mx</p>
+              <p></p>
+              <p>Dirección:</p>
+              <p>
+                Torre Esmeralda III, Ferrocarril de Cuernavaca, Ciudad de
+                México.
+              </p>
             </div>
 
             {/* Enlaces */}
@@ -609,7 +567,25 @@ const Home = () => {
           <div className="footer-bottom text-center mt-3">
             <hr className="footer-line" />
             <p className="footer-emoji">
-              Construyendo tu éxito con nosotros 📈
+              Desarrollado por{" "}
+              <a
+                href="https://www.linkedin.com/in/luis-armando-alvarez-zapfe-201217137/?originalSubdomain=mx"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#4facfe", textDecoration: "none" }}
+              >
+                Luis Armando Alvarez Zapfe
+              </a>{" "}
+              con{"  "}
+              <a
+                href="https://reactjs.org/"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "#4facfe", textDecoration: "none" }}
+              >
+                React.js
+              </a>{" "}
+              <i className="fab fa-react"></i>
             </p>
           </div>
         </div>

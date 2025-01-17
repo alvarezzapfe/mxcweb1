@@ -1,7 +1,8 @@
 .contact-section {
   background: linear-gradient(145deg, #001f3f, #002d6f, #003b80);
   display: flex;
-  justify-content: center;
+  flex-direction: column
+  justify-content: space-between;
   align-items: center;
   height: 100vh;
   color: #ffffff;
@@ -12,14 +13,15 @@
   border-radius: 20px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5),
     inset 0 -10px 30px rgba(0, 0, 0, 0.2);
-  padding: 40px;
-  width: 400px;
+  padding: 30px; /* Reduce padding */
+  width: 300px; /* Reduce el ancho a un 25% menos */
+  max-width: 90%; /* Asegura que no se desborde en pantallas pequeñas */
   text-align: center;
   color: #ffffff;
 }
 
 .contact-form h2 {
-  font-size: 2rem;
+  font-size: 1.5rem; /* Ajusta el tamaño de la fuente */
   font-weight: bold;
   margin-bottom: 20px;
   text-transform: uppercase;
@@ -27,7 +29,7 @@
 }
 
 .contact-form .form-group {
-  margin-bottom: 20px;
+  margin-bottom: 15px; /* Reduce el margen inferior */
   text-align: left;
 }
 
@@ -37,8 +39,8 @@
   border: 1px solid #4facfe;
   border-radius: 10px;
   color: white;
-  padding: 10px;
-  font-size: 0.9rem;
+  padding: 8px; /* Reduce padding */
+  font-size: 0.85rem; /* Ajusta el tamaño de la fuente */
 }
 
 .contact-form .form-control::placeholder {
@@ -49,8 +51,8 @@
   background: linear-gradient(145deg, #1e90ff, #00bfff);
   border: none;
   border-radius: 50px;
-  padding: 10px 30px;
-  font-size: 1.2rem;
+  padding: 8px 20px; /* Reduce el tamaño del botón */
+  font-size: 1rem; /* Ajusta el tamaño de la fuente */
   color: white;
   cursor: pointer;
   box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
@@ -66,4 +68,58 @@
 .contact-form .btn-submit:active {
   transform: scale(1);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 80%; /* Más pequeña en pantallas móviles */
+    padding: 20px; /* Reduce padding */
+  }
+
+  .contact-form h2 {
+    font-size: 1.3rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .contact-form .form-control,
+  .contact-form .form-select {
+    padding: 6px; /* Reduce padding en campos de texto */
+    font-size: 0.8rem; /* Ajusta el tamaño de la fuente */
+  }
+
+  .contact-form .btn-submit {
+    padding: 6px 15px; /* Botón más pequeño */
+    font-size: 0.9rem; /* Texto del botón más pequeño */
+  }
+}
+
+/* Estilos para el footer */
+footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 768px) {
+  .contact-form {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .contact-form h2 {
+    font-size: 1.3rem;
+  }
+
+  .contact-form .form-control,
+  .contact-form .form-select {
+    padding: 6px;
+    font-size: 0.8rem;
+  }
+
+  .contact-form .btn-submit {
+    padding: 6px 15px;
+    font-size: 0.9rem;
+  }
 }
